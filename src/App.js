@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import GeneralInfo from './components/GeneralInfo';
+import CVPreview from './components/CVPreview';
+import Education from './components/Education';
 
-function App() {
+
+export default function App() {
+  const [generalInfo, setGeneralInfo] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  }  
+);
+
+const [education, setEducation] = useState({
+  collegeName: '',
+  major: '',
+  startDate: '',
+  endDate: '',
+})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>CV Maker</h1>
+      <GeneralInfo generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
+      <Education education={education} setEducation={setEducation} />
+      <CVPreview generalInfo={generalInfo} education={education} />
     </div>
   );
 }
-
-export default App;
