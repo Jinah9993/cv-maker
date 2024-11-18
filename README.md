@@ -27,3 +27,4 @@ This will open the app in your browser at http://localhost:3000
 - Additional sections: add more sections to the CV such as awards, certifications...
 - PDF page size and scaling so the CV can fit into one page, no matter the content length
 - Font size, add description box..
+- Deploy
