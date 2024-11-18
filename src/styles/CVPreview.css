@@ -1,14 +1,13 @@
-.resume-container {
+.cv-preview-container {
     font-family: 'Arial', sans-serif;
-    margin: 20px;
     padding: 20px;
     background-color: #fff;
     color: #333;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    line-height: 1.6;
   }
   
   .resume-header {
@@ -17,54 +16,54 @@
   }
   
   .resume-header h1 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
+    margin-bottom: 5px;
   }
   
   .resume-header p {
-    font-size: 16px;
-    color: #666;
+    font-size: 14px;
+    color: #555;
   }
   
   .resume-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .resume-section h2 {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    color: #000000; 
-    border-bottom: 2px solid #7f827f;
+    color: #000;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 10px;
   }
   
-  .experience-item {
-    margin-bottom: 15px;
-  }
-  
-  .experience-item h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .experience-item p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .experience-item strong {
-    font-weight: bold;
+  .resume-section p {
+    font-size: 14px;
+    margin: 5px 0;
   }
   
   .resume-section ul {
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: disc;
+    padding-left: 20px;
   }
   
   .resume-section ul li {
-    font-size: 16px;
-    padding: 5px 0;
-    color: #555;
+    font-size: 14px;
+  }
+  
+  .resume-experience-item {
+    margin-bottom: 15px;
+  }
+  
+  .resume-experience-item p {
+    margin: 2px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .cv-preview-container {
+      padding: 10px;
+    }
   }
   
