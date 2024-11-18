@@ -39,6 +39,16 @@ export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
             onChange={handleChange}
           />
         </label>
+        <br />
+        <label>
+          Location:
+          <input
+            type="text"
+            name="location"
+            value={generalInfo.location}
+            onChange={handleChange}
+          />
+        </label>
       </form>
     </div>
   );
