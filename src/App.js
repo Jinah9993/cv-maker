@@ -4,6 +4,8 @@ import CVPreview from './components/CVPreview';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Skill from './components/Skill';
+import './App.css';
+
 
 
 
@@ -27,13 +29,21 @@ const [experienceList, setExperienceList] = useState([]);
 const [skillList, setSkillList] = useState([]);
 
   return (
-    <div>
-      <h1>CV Maker</h1>
-      <GeneralInfo generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
-      <Education education={education} setEducation={setEducation} />
-      <Experience experienceList={experienceList} setExperienceList={setExperienceList} />
-      <Skill skillList={skillList} setSkillList={setSkillList} />
-      <CVPreview generalInfo={generalInfo} education={education} experienceList = {experienceList} skillList={skillList} />
+    <div className="container">
+      <div className="form-section">
+        <GeneralInfo generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
+        <Education education={education} setEducation={setEducation} />
+        <Experience experienceList={experienceList} setExperienceList={setExperienceList} />
+        <Skill skillList={skillList} setSkillList={setSkillList} />
+      </div>
+      <div className="preview-section">
+        <CVPreview
+          generalInfo={generalInfo}
+          education={education}
+          experienceList={experienceList}
+          skillList={skillList}
+        />
+      </div>
     </div>
   );
 }

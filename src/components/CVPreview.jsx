@@ -1,49 +1,39 @@
 import React from 'react';
+import '../styles/CVPreview.css';
+
 
 export default function CVPreview({ generalInfo, education, experienceList, skillList }) {
+  
   return (
-    <div>
-      <h2>Preview</h2>
-      <h1>General Information</h1>
-      <p><strong>Name:</strong> {generalInfo.name || 'N/A'}</p>
-      <p><strong>Email:</strong> {generalInfo.email || 'N/A'}</p>
-      <p><strong>Phone:</strong> {generalInfo.phone || 'N/A'}</p>
-      <p><strong>Location:</strong> {generalInfo.location || 'N/A'}</p>
-
-      <h1>Education</h1>
-      <p><strong>College Name:</strong> {education.collegeName || 'N/A'}</p>
-      <p><strong>Major:</strong> {education.major || 'N/A'}</p>
-      <p><strong>Start Date:</strong> {education.startDate || 'N/A'}</p>
-      <p><strong>End Date:</strong> {education.endDate || 'N/A'}</p>
-
-      <h1>Experience</h1>
-      {experienceList.length > 0 ? (
-        <ul>
-          {experienceList.map((item, index) => (
-            <li key={index}>
-              <p><strong>Title:</strong> {item.title}</p>
-              <p><strong>Description:</strong> {item.description}</p>
-              <p><strong>Start Date:</strong> {item.startDate}</p>
-              <p><strong>End Date:</strong> {item.endDate}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No experience added yet.</p>
-      )}
-
-      <h1>Skills</h1>
-      {skillList.length > 0 ? (
+    <div className="resume-container">
+      <div className="resume-header">
+        <h1>{generalInfo.name}</h1>
+        <p>{generalInfo.email} | {generalInfo.phone} | {generalInfo.location}</p>
+      </div>
+      <div className="resume-section">
+        <h2>Education</h2>
+        {education.collegeName && (
+          <p><strong>{education.collegeName}</strong>, {education.major} ({education.startDate} - {education.endDate})</p>
+        )}
+      </div>
+      <div className="resume-section">
+        <h2>Experience</h2>
+        {experienceList.map((item, index) => (
+          <div key={index} className="experience-item">
+            <h3>{item.title}</h3>
+            <p><strong>Duration:</strong> {item.startDate} - {item.endDate}</p>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="resume-section">
+        <h2>Skills</h2>
         <ul>
           {skillList.map((item, index) => (
-            <li key={index}>
-              <p><strong>Description:</strong> {item.description}</p>
-            </li>
+            <li key={index}>{item.description}</li>
           ))}
         </ul>
-      ) : (
-        <p>No skill added yet.</p>
-      )}
+      </div>
     </div>
   );
 }
